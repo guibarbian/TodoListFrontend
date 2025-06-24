@@ -40,9 +40,18 @@ const handleDeleteTask = (id: number) => {
   };
 
 const handleSaveAll = () => {
-  tasks.forEach((task) => {
+  const updatedTasks = tasks.map((task) => {
+    if (task.titulo.trim() === '') {
+      return { ...task, titulo: 'Insira um titulo' };
+    }
+    return task;
+  });
+
+  setTasks(updatedTasks);
+
+  updatedTasks.forEach((task) => {
     api.put(`/tasks/${task.id}`, task)
-      .catch((err) => console.error(`Erro ao salvar tarefa ${task.id}:`, err));
+        .catch((err) => console.error(`Erro ao salvar tarefa ${task.id}:`, err));
   });
 };
 
