@@ -1,54 +1,86 @@
-# React + TypeScript + Vite
+# TodoList Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## O projeto 📊
+Este é o frontend para uma aplicação de gerenciamento de tarefas
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas 🧭
+- **React** - Biblioteca principal
+- **TypeScript** - Para tipagem estática
+- **Axios** - Para requisições HTTP
+- **Vite** - Para bundling e desenvolvimento
+- **Figma** - Para design da interface
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pré-requisitos
+- Node.js 18 ou superior
+- Backend Spring Boot disponível na porta 8080
 
-## Expanding the ESLint configuration
+## Backend 🌐
+O frontend se conecta a uma API em Spring Boot hospedada em: http://localhost:8080/api/v1/tasks
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Como executar o projeto ⚙️
+Clone o repositório:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/guibarbian/TodoListFrontend.git
+cd TodoListFrontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Instale as dependências:
+```bash
+npm install
 ```
+
+Execute o servidor de desenvolvimento:
+```bash
+npm run dev
+```
+
+Acesse no navegador: http://localhost:5173
+
+Nota: Certifique-se de que a API backend esteja rodando corretamente em http://localhost:8080.
+
+## Estrutura do Projeto 📁
+
+```bash
+├── src
+│   ├── components
+│   │   └── TaskItem.tsx
+│   ├── pages
+│   │   └── Home.tsx
+│   ├── services
+│   │   └── api.ts
+│   ├── types
+│   │   └── Task.ts
+│   ├── App.tsx
+│   ├── main.tsx
+├── public
+├── package.json
+└── vite.config.ts
+```
+
+## Funcionalidade do Projeto 📷
+### Get
+Ao abrir a aplicação, a primeira requisição a ser feita será um `GET` de tasks, assim mostrando 
+todas as Tasks que existem no banco
+![Get_Screenshot](docs/Get_Screenshot.png)
+
+### Post
+Para fazer um `POST` de uma Task, basta clicar no botão "Adicionar Tarefa", que será criada uma 
+nova tarefa no board com um "título" padrão e "concluida" como `false`.
+![Post_Screenshot](docs/Post_Screenshot.png)
+
+### Put
+Para fazer um `PUT` de uma task, basta fazer as alterações planejadas e clicar em "Salvar 
+Alterações", assim, a aplicação vai atualizar os dados da Task no banco de dados
+![Put_Screenshot](docs/Put_Screenshot.png)
+
+### Delete
+Por fim, para fazer um `DELETE` de uma Task, basta clicar no botão com `X` ao lado do check de
+conclusão da task, assim, ela será permanentemente deletada do banco de dados
+![Delete_Screenshot](docs/Delete_Screenshot.png)
+
+## Desenvolvido com ⚙ 
+- VSCode
+
+## Autor ✏
+- Guilherme A. Barbian
