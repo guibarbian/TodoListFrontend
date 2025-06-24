@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f3f3;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.task-board {
+  background-color: #dddddd;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 1800px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  background-color: #dadada;
+  font-weight: bold;
+}
+
+.task-header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.task-card {
+  background-color: #7c7c7c;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.task-card-header {
+  background-color: #4097ff;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.task-card-content {
+  display: flex;
+  align-items: center;
+  padding: 25px 50px;
+  background-color: #979797;
+  font-weight: bold;
+}
+
+.task-card-content-adv{
+  position: absolute;
+  left: 10px;
+}
+
+.task-card input[type="text"] {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.task-card input[type="text"]:focus {
+  outline: none;
+}
+
+.task-card input[type="checkbox"] {
+  position: absolute;
+  top: 8px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  accent-color: green;
+  cursor: pointer;
+}
+
+.button {
+  background-color: #4097ff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #357ae8;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.delete-button {
+  background-color: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  font-size: 1rem;
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.delete-button:focus {
+  outline: none;
+}
+
+.delete-button:hover {
+  background-color: #CA0000;
+}
